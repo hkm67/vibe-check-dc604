@@ -1,0 +1,2 @@
+"""Defanged workshop AI harness."""
+

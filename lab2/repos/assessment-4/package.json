@@ -1,0 +1,13 @@
+{
+  "name": "rate-limit-proxy",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Per-API-key rate limiter — take-home review exercise",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

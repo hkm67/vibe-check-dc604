@@ -1,0 +1,16 @@
+[project]
+name = "vibe-check-harness"
+version = "0.1.0"
+description = "Defanged workshop AI agent harness — Vibe Check Lab 2"
+requires-python = ">=3.10"
+dependencies = []
+
+[project.scripts]
+harness = "harness.__main__:main"
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["harness"]

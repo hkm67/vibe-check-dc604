@@ -1,0 +1,13 @@
+{
+  "name": "candidate-portal",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tasks API — take-home review exercise",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

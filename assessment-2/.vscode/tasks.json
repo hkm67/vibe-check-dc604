@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "workspace init",
+      "type": "shell",
+      "command": "bash scripts/init.sh",
+      "runOptions": {
+        "runOn": "folderOpen"
+      },
+      "problemMatcher": [],
+      "presentation": {
+        "reveal": "silent",
+        "panel": "dedicated",
+        "clear": true
+      }
+    }
+  ]
+}
